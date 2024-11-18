@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #1c1719;
+  --text-primary: #E5E5E5;
+  --block-bg: #252123;
+  --block-border: #2D2729;
+  --accent: #6366F1;
+}
+
+@layer base {
+  html {
+    @apply bg-[var(--bg-primary)];
+  }
+  
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-exo min-h-screen;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section {
+    @apply py-16 sm:py-24;
+  }
+  
+  .block-bg {
+    @apply bg-[var(--block-bg)] border border-[var(--block-border)] rounded-lg shadow-lg;
+  }
+}
+
+@layer utilities {
+  @keyframes gradient-x {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 100%;
+    animation: gradient-x 15s ease infinite;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+} 
