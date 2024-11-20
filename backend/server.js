@@ -5,7 +5,12 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(cors({
-    origin: ['https://kyureno.dev', 'http://kyureno.dev', 'http://localhost:3000'],
+    origin: [
+        'https://kyureno.dev',
+        'https://www.kyureno.dev',
+        'https://portfolio-kyurenoxd.vercel.app',
+        'http://localhost:3000'
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
