@@ -14,7 +14,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:react',
     category: 'Frontend',
     isActive: true,
-    description: '2+ years of React development experience. Deep understanding of hooks, context, performance optimization, and architectural patterns.'
+    description: '2+ года опыта разработки на React. Глубокое понимание хуков, контекста, оптимизации производительности и архитектурных паттернов.'
   },
   {
     id: 'nextjs',
@@ -22,7 +22,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:nextjs-icon',
     category: 'Frontend',
     isActive: true,
-    description: '1.5+ years of Next.js experience. Proficient with App Router, server components, and performance optimization. Experience with ISR, SSG, and SSR.'
+    description: '1.5+ года опыта работы с Next.js. Опыт работы с App Router, серверными компонентами и оптимизацией. Опыт с ISR, SSG и SSR.'
   },
   {
     id: 'typescript',
@@ -30,7 +30,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:typescript-icon',
     category: 'Frontend',
     isActive: true,
-    description: 'Actively using TypeScript in all projects to ensure type safety and improve team development. Experience with advanced types and patterns.'
+    description: 'Активно использую TypeScript во всех проектах для обеспечения типобезопасности. Опыт работы с продвинутыми типами и паттернами.'
   },
   {
     id: 'javascript',
@@ -38,7 +38,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:javascript',
     category: 'Frontend',
     isActive: true,
-    description: 'Core frontend development language with 4+ years of experience. Deep understanding of JavaScript fundamentals, asynchronous programming, and modern features.'
+    description: 'Основной язык фронтенд-разработки с 4+ годами опыта. Глубокое понимание основ JavaScript, асинхронного программирования и современных функций.'
   },
   {
     id: 'tailwindcss',
@@ -46,7 +46,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:tailwindcss-icon',
     category: 'Frontend',
     isActive: true,
-    description: 'Actively using TailwindCSS to create modern and responsive interfaces. Experience with custom configurations and optimization.'
+    description: 'Активно использую TailwindCSS для создания современных и адаптивных интерфейсов. Опыт с кастомными конфигурациями и оптимизацией.'
   },
   {
     id: 'materialui',
@@ -54,16 +54,24 @@ const SKILLS: Skill[] = [
     icon: 'logos:material-ui',
     category: 'Frontend',
     isActive: true,
-    description: 'Experience with Material UI for creating consistent user interfaces. Theme customization and component styling.'
+    description: 'Опыт работы с Material UI для создания согласованных пользовательских интерфейсов. Кастомизация тем и стилизация компонентов.'
   },
   // Backend
   {
-    id: 'rust',
-    name: 'Rust',
-    icon: 'vscode-icons:file-type-rust',
+    id: 'golang',
+    name: 'Golang',
+    icon: 'logos:go',
     category: 'Backend',
     isActive: true,
-    description: 'Experience in building high-performance backend services. Focus on memory safety and concurrent programming. Integration with various APIs and services.'
+    description: 'Опыт разработки высокопроизводительных микросервисов и CLI-инструментов. Работа с горутинами и каналами для конкурентного программирования.'
+  },
+  {
+    id: 'python',
+    name: 'Python',
+    icon: 'logos:python',
+    category: 'Backend',
+    isActive: true,
+    description: 'Опыт в разработке скриптов автоматизации и обработке данных. Работа с Django и FastAPI для веб-разработки.'
   },
   {
     id: 'nodejs',
@@ -71,7 +79,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:nodejs-icon',
     category: 'Backend',
     isActive: true,
-    description: 'Experience in backend service development with Node.js. Working with Express, REST APIs, and various service integrations.'
+    description: 'Опыт разработки бэкенд-сервисов на Node.js. Работа с Express, REST API и различными интеграциями сервисов.'
   },
   // Other
   {
@@ -80,7 +88,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:github-actions',
     category: 'Other',
     isActive: true,
-    description: 'Experience with CI/CD pipeline setup using GitHub Actions. Automation of testing, building, and deployment processes.'
+    description: 'Опыт настройки CI/CD пайплайнов с использованием GitHub Actions. Автоматизация тестирования, сборки и развертывания.'
   },
   {
     id: 'storyblok',
@@ -88,7 +96,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:storyblok-icon',
     category: 'Other',
     isActive: true,
-    description: 'Experience with Storyblok as headless CMS. Creation of custom components and blocks.'
+    description: 'Опыт работы со Storyblok как headless CMS. Создание кастомных компонентов и блоков.'
   },
   {
     id: 'vercel',
@@ -96,7 +104,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:vercel-icon',
     category: 'Other',
     isActive: true,
-    description: 'Experience in deploying and optimizing applications on Vercel platform. Working with analytics and Web Vitals optimization.'
+    description: 'Опыт развертывания и оптимизации приложений на платформе Vercel. Работа с аналитикой и оптимизацией Web Vitals.'
   },
   {
     id: 'nx',
@@ -104,7 +112,7 @@ const SKILLS: Skill[] = [
     icon: 'logos:nx',
     category: 'Other',
     isActive: true,
-    description: 'Experience with monorepo management using NX. Workspace configuration and development process optimization.'
+    description: 'Опыт управления монорепозиторием с помощью NX. Настройка рабочего пространства и оптимизация процесса разработки.'
   }
 ];
 
@@ -113,17 +121,17 @@ const CATEGORIES = [
   {
     id: 'Frontend',
     icon: 'carbon:application-web',
-    label: 'Frontend'
+    label: 'Фронтенд'
   },
   {
     id: 'Backend',
     icon: 'carbon:terminal',
-    label: 'Backend'
+    label: 'Бэкенд'
   },
   {
     id: 'Other',
     icon: 'carbon:tools',
-    label: 'Other'
+    label: 'Прочее'
   }
 ] as const;
 
@@ -151,7 +159,7 @@ export function Skills() {
           <h2 className="text-5xl lg:text-6xl font-bold text-center mb-16
             bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)]
             bg-clip-text text-transparent">
-            Skills
+            Навыки
           </h2>
 
           {/* Main Skills */}
@@ -204,7 +212,7 @@ export function Skills() {
                 {/* Текст кнопки */}
                 <span className="relative flex items-center gap-2 text-lg font-medium
                   text-gray-400 group-hover:text-white transition-colors">
-                  <span>View All Skills</span>
+                  <span>Показать все навыки</span>
                   <svg 
                     className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
                     fill="none" 
@@ -234,13 +242,13 @@ export function Skills() {
               >
                 <div className="flex justify-between items-center mb-8">
                   <h3 className="text-2xl font-bold">
-                    Programming Languages / Frameworks
+                    Языки программирования / Фреймворки
                   </h3>
                   <button
                     onClick={() => setShowAll(false)}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Back
+                    Назад
                   </button>
                 </div>
 

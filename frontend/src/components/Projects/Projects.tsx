@@ -13,12 +13,12 @@ const MAIN_CATEGORIES = [
   {
     id: 'My Projects',
     icon: 'carbon:user-profile',
-    label: 'My Projects'
+    label: 'Мои проекты'
   },
   {
     id: 'External Projects',
     icon: 'carbon:partnership',
-    label: 'External Projects'
+    label: 'Внешние проекты'
   }
 ] as const;
 
@@ -26,62 +26,156 @@ const SUB_CATEGORIES = [
   {
     id: 'Frontend',
     icon: 'carbon:application-web',
-    label: 'Frontend'
+    label: 'Фронтенд'
   },
   {
     id: 'Backend',
     icon: 'carbon:terminal',
-    label: 'Backend'
+    label: 'Бэкенд'
   }
 ] as const;
 
 const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Portfolio v2',
-    description: 'Modern portfolio website with Spotify API integration, smooth animations, and responsive design.',
+    title: 'Портфолио v2',
+    description: 'Современный сайт-портфолио с интеграцией Spotify API, плавными анимациями и адаптивным дизайном.',
     mainCategory: 'My Projects',
     subCategory: 'Frontend',
     technologies: ['TypeScript 96.9%', 'CSS 1.8%', 'JavaScript 1.3%'],
-    demo: 'Live',
+    demo: 'Демо',
+    github: 'https://github.com/Kyurenoxd/Portfolio',
     details: {
-      overview: 'A modern portfolio showcasing my projects and skills, built with Next.js and Rust backend',
+      overview: 'Современное портфолио, демонстрирующее мои проекты и навыки, построенное на Next.js с бэкендом на Rust',
       features: [
-        'Spotify API Integration',
-        'Real-time Weather Updates',
-        'Responsive Design',
-        'Smooth Animations'
+        'Интеграция со Spotify',
+        'Обновления погоды в реальном времени',
+        'Адаптивный дизайн',
+        'Плавные анимации'
       ],
-      challenges: ['API Integration', 'Performance Optimization', 'Animation Smoothness'],
-      solutions: ['Custom Rust Backend', 'Framer Motion for Animations', 'Optimized Asset Loading']
+      challenges: ['Интеграция API', 'Оптимизация производительности', 'Плавность анимаций'],
+      solutions: ['Кастомный бэкенд на Rust', 'Framer Motion для анимаций', 'Оптимизация загрузки ресурсов']
     }
   },
   {
     id: '2',
-    title: 'Weather & Spotify Integration',
-    description: 'Backend service built with Rust for real-time weather data and Spotify playback integration.',
+    title: 'Интеграция погоды и Spotify',
+    description: 'Бэкенд-сервис на Rust для получения данных о погоде в реальном времени и интеграции с Spotify.',
     mainCategory: 'My Projects',
     subCategory: 'Backend',
     technologies: ['Rust 98.2%', 'TOML 1.8%'],
-    demo: 'Live',
+    demo: 'Демо',
     details: {
-      overview: 'High-performance Rust backend service handling real-time weather updates and Spotify integration',
+      overview: 'Высокопроизводительный бэкенд-сервис на Rust для обработки обновлений погоды и интеграции со Spotify',
       features: [
-        'OpenWeather API Integration',
-        'Spotify Current Track Display',
-        'Real-time Data Updates',
-        'Error Handling & Recovery',
-        'Rate Limiting Protection'
+        'Интеграция с OpenWeather API',
+        'Отображение текущего трека Spotify',
+        'Обновления данных в реальном времени',
+        'Обработка ошибок и восстановление',
+        'Защита от превышения лимитов'
       ],
       challenges: [
-        'Real-time Data Synchronization',
-        'API Rate Limits Management',
-        'Error Recovery Strategies'
+        'Синхронизация данных в реальном времени',
+        'Управление лимитами API',
+        'Стратегии восстановления после ошибок'
       ],
       solutions: [
-        'Efficient Caching System',
-        'Smart Retry Logic',
-        'Robust Error Handling'
+        'Эффективная система кэширования',
+        'Умная логика повторных попыток',
+        'Надежная обработка ошибок'
+      ]
+    }
+  },
+  {
+    id: '3',
+    title: 'OSL - OsuServerLauncher',
+    description: 'Современный лаунчер для приватных серверов osu! с богатым функционалом и удобным интерфейсом.',
+    mainCategory: 'External Projects',
+    subCategory: 'Frontend',
+    technologies: ['TypeScript 92.1%', 'JavaScript 4.8%', 'CSS 2.8%', 'HTML 0.3%'],
+    demo: 'Демо',
+    github: 'https://github.com/Kyurenoxd/OSL',
+    details: {
+      overview: 'Простой, быстрый и многофункциональный лаунчер для управления и подключения к приватным серверам osu!',
+      features: [
+        'Управление серверами в реальном времени',
+        'Автоматическая сортировка серверов',
+        'Система избранных серверов',
+        'Автоматическое определение пути osu!',
+        'Поддержка нескольких языков',
+        'Темная/Светлая тема'
+      ],
+      challenges: [
+        'Интеграция с различными серверами',
+        'Оптимизация производительности',
+        'Кроссплатформенная совместимость'
+      ],
+      solutions: [
+        'Использование Electron для десктопа',
+        'React для современного UI',
+        'TypeScript для надежности кода',
+        'Tailwind CSS для стилизации'
+      ]
+    }
+  },
+  {
+    id: '4',
+    title: 'ServerSync [В разработке]',
+    description: 'Высокопроизводительный Discord Server Cloner, написанный на Golang для быстрого клонирования серверов.',
+    mainCategory: 'My Projects',
+    subCategory: 'Backend',
+    technologies: ['Go 82.0%', 'Batchfile 18.0%'],
+    github: 'https://github.com/Kyurenoxd/ServerSync',
+    details: {
+      overview: 'Инструмент для клонирования Discord серверов с сохранением всей структуры и настроек, написанный на Go',
+      features: [
+        'Клонирование структуры серверов Discord',
+        'Копирование ролей с сохранением прав и цветов',
+        'Копирование каналов с сохранением разрешений',
+        'Копирование категорий и их структуры',
+        'Перенос настроек сервера и аватара',
+        'Копирование эмодзи'
+      ],
+      challenges: [
+        'Работа с Discord API',
+        'Оптимизация процесса клонирования',
+        'Обработка больших объемов данных'
+      ],
+      solutions: [
+        'Эффективная обработка запросов к API',
+        'Параллельное выполнение операций',
+        'Оптимизированная структура данных'
+      ]
+    }
+  },
+  {
+    id: '5',
+    title: 'Scared))0) [В разработке]',
+    description: 'Discord бот для сервера zxcursed с расширенным функционалом модерации и развлекательными командами.',
+    mainCategory: 'External Projects',
+    subCategory: 'Backend',
+    technologies: ['Go 100%'],
+    discord: 'https://discord.gg/zxcursed',
+    discordName: 'zxcursed',
+    githubPlaceholder: 'https://github.com/Kyurenoxd/scared-zxcursed',
+    details: {
+      overview: 'Многофункциональный Discord бот для сервера zxcursed, разрабатываемый на Golang',
+      features: [
+        'Система модерации',
+        'Развлекательные команды',
+        'Интеграция с API Discord',
+        'Система уровней',
+        'Автоматизация задач сервера'
+      ],
+      challenges: [
+        'Оптимизация производительности',
+        'Масштабируемость системы',
+        'Обработка большого количества событий'
+      ],
+      solutions: [
+        'Эффективная архитектура',
+        'Кэширование данных',
+        'Асинхронная обработка событий'
       ]
     }
   }
@@ -109,7 +203,7 @@ export function Projects() {
           <h2 className="text-5xl lg:text-6xl font-bold text-center mb-16
             bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)]
             bg-clip-text text-transparent">
-            Projects
+            Проекты
           </h2>
 
           {/* Main Categories */}
@@ -165,31 +259,25 @@ export function Projects() {
             ))}
           </div>
 
-          {activeMainCategory === 'External Projects' ? (
-            <div className="text-center text-gray-400 text-xl">
-              Coming Soon...
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <AnimatePresence mode="wait">
-                {filteredProjects.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ProjectCard
-                      project={project}
-                      onClick={() => setSelectedProject(project)}
-                    />
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatePresence mode="wait">
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ProjectCard
+                    project={project}
+                    onClick={() => setSelectedProject(project)}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
 

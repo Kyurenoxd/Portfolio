@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { LanguageStats } from './LanguageStats';
 import type { Project } from '@/types/project';
+import { Icon } from '@iconify/react';
 
 interface ProjectCardProps {
   project: Project;
@@ -57,13 +58,43 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
         </div>
       )}
 
-      {project.demo && (
+      {(project.demo || project.github || project.githubPlaceholder || project.discord) && (
         <div className="flex gap-4 mt-4 pt-4 border-t border-[var(--block-border)]">
-          <span
-            className="text-gray-400 hover:text-[var(--accent)] transition-colors"
-          >
-            {project.demo}
-          </span>
+          {project.demo && (
+            <span className="text-gray-400 hover:text-[var(--accent)] transition-colors">
+              {project.demo}
+            </span>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[var(--accent)] transition-colors flex items-center gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Icon icon="carbon:logo-github" className="w-5 h-5" />
+              GitHub
+            </a>
+          )}
+          {project.githubPlaceholder && (
+            <span className="text-gray-400 line-through flex items-center gap-2 cursor-not-allowed opacity-50">
+              <Icon icon="carbon:logo-github" className="w-5 h-5" />
+              GitHub
+            </span>
+          )}
+          {project.discord && (
+            <a
+              href={project.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[var(--accent)] transition-colors flex items-center gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Icon icon="carbon:logo-discord" className="w-5 h-5" />
+              {project.discordName || 'Discord'}
+            </a>
+          )}
         </div>
       )}
     </motion.div>

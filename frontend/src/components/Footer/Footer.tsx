@@ -21,7 +21,7 @@ export function Footer() {
             <Icon icon="fa6-brands:discord" className="w-6 h-6" />
           </a>
           <a
-            href="https://t.me/Kyurenoxd"
+            href="https://t.me/Kyurenosloweyeclose"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[var(--accent)] transition-colors"
@@ -32,12 +32,12 @@ export function Footer() {
 
         {/* Copyright & Policy */}
         <div className="text-center text-sm text-gray-400">
-          <p className="mb-2">© 2024 Kyureno • All rights reserved</p>
+          <p className="mb-2">© 2024-2025 Kyureno • Все права защищены</p>
           <button
             onClick={() => setShowPolicy(true)}
             className="text-[var(--accent)] hover:underline text-sm"
           >
-            Privacy Policy
+            политика конфиденциальности
           </button>
         </div>
 
@@ -77,7 +77,7 @@ export function Footer() {
                       transition={{ delay: 0.2 }}
                       className="text-2xl font-bold text-[var(--text-primary)]"
                     >
-                      Privacy Policy
+                      политика конфиденциальности
                     </motion.h2>
                     <motion.button
                       initial={{ opacity: 0, rotate: -90 }}
@@ -98,11 +98,11 @@ export function Footer() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <p>1. No personal data is collected or processed.</p>
-                    <p>2. The website uses Spotify API exclusively to display the currently playing track.</p>
-                    <p>3. All website materials, including texts, images, and code, are protected by copyright.</p>
-                    <p>4. Copying and using materials without written permission is prohibited.</p>
-                    <p>5. If you have any questions, you can contact me through Discord (@https://discord.gg/u2cgU8g3D9) or Telegram (@Kyurenoxd).</p>
+                    <p>1. Никакие персональные данные не собираются и не обрабатываются.</p>
+                    <p>2. Все материалы веб-сайта, включая тексты, изображения и код, защищены авторским правом.</p>
+                    <p>3. Веб-сайт использует Spotify API исключительно для отображения проигрываемого в данный момент трека.</p>
+                    <p>4. копирование и использование материалов без письменного разрешения запрещено.</p>
+                    <p>5. Если у вас есть какие-либо вопросы, вы можете связаться со мной через Discord (@https://discord.gg/u2cgU8g3D9) или Telegram (@Kyurenosloweyeclose).</p>
                   </motion.div>
                 </div>
               </motion.div>

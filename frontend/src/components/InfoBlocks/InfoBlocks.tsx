@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { useInView } from '@/hooks/useInView';
 import type { WeatherData } from '@/types/weather';
+import { ru } from 'date-fns/locale';
 
 export function InfoBlocks() {
   const { ref, isInView } = useInView();
@@ -49,7 +50,7 @@ export function InfoBlocks() {
           {/* Time Block */}
           <div className="block-bg p-8 md:p-10 border-2 border-[var(--block-border)] backdrop-blur-sm
             text-center transition-all duration-500 hover:border-[var(--accent)]">
-            <h3 className="text-xl text-gray-400 mb-3">Current Time</h3>
+            <h3 className="text-xl text-gray-400 mb-3">Времени в моем городе</h3>
             <p className="text-4xl font-bold text-[var(--text-primary)]">
               {format(time, 'HH:mm:ss')}
             </p>
@@ -59,10 +60,11 @@ export function InfoBlocks() {
           {/* Date Block */}
           <div className="block-bg p-8 md:p-10 border-2 border-[var(--block-border)] backdrop-blur-sm
             text-center transition-all duration-500 hover:border-[var(--accent)]">
-            <h3 className="text-xl text-gray-400 mb-3">Today</h3>
+            <h3 className="text-xl text-gray-400 mb-3">Сегодня</h3>
             <p className="text-4xl font-bold text-[var(--text-primary)]">
-              {format(time, 'dd MMM yyyy')}
+              {format(time, 'dd MMMM', { locale: ru })}
             </p>
+            <p className="text-gray-400 mt-2">{format(time, 'yyyy')}</p>
           </div>
 
           {/* Weather Block */}
@@ -70,7 +72,7 @@ export function InfoBlocks() {
             text-center transition-all duration-500 hover:border-[var(--accent)]">
             <h3 className="text-xl text-gray-400 mb-3">Weather</h3>
             {loading ? (
-              <p className="text-4xl font-bold text-[var(--text-primary)]">Loading...</p>
+              <p className="text-4xl font-bold text-[var(--text-primary)]">Загрузка...</p>
             ) : weather ? (
               <>
                 <p className="text-4xl font-bold text-[var(--text-primary)]">
@@ -79,7 +81,7 @@ export function InfoBlocks() {
                 <p className="text-gray-400 mt-2">{weather.condition}</p>
               </>
             ) : (
-              <p className="text-4xl font-bold text-[var(--text-primary)]">Error</p>
+              <p className="text-4xl font-bold text-[var(--text-primary)]">Скоро будет</p>
             )}
           </div>
         </div>

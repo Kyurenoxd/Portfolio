@@ -9,6 +9,10 @@ export interface Project {
   subCategory: ProjectSubCategory;
   technologies: string[];
   demo?: string;
+  github?: string;
+  githubPlaceholder?: string;
+  discord?: string;
+  discordName?: string;
   details: {
     overview: string;
     features: string[];

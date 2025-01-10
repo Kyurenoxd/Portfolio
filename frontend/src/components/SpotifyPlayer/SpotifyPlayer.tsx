@@ -8,17 +8,18 @@ export function SpotifyPlayer() {
   const { track, loading } = useSpotify();
 
   return (
-    <section className="relative bg-[var(--bg-primary)] py-32 md:py-48 lg:py-64 min-h-screen flex items-center">
+    <section className="relative bg-[var(--bg-primary)] py-16 md:py-20 min-h-[30vh] flex items-center">
       <div className="container-custom max-w-4xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={track?.title || 'not-playing'}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 0.9, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="block-bg border-2 border-[var(--block-border)] hover:border-[var(--accent)] 
-              transition-all duration-300 relative overflow-hidden mx-4"
+            transition={{ duration: 0.7 }}
+            className="block-bg border border-[var(--block-border)] hover:border-[var(--accent)]/50 
+              transition-all duration-500 relative overflow-hidden mx-4
+              backdrop-blur-sm bg-[var(--block-bg)]/80"
           >
             {/* Mobile Layout (Stack) */}
             <div className="flex flex-col md:hidden">
@@ -30,7 +31,7 @@ export function SpotifyPlayer() {
                     className="absolute inset-0 blur-2xl transition-opacity duration-700"
                     style={{ 
                       background: track.dominant_color,
-                      opacity: track.is_playing ? 0.3 : 0.15,
+                      opacity: track.is_playing ? 0.15 : 0.1,
                       transform: 'scale(1.5)',
                     }}
                   />
@@ -57,22 +58,22 @@ export function SpotifyPlayer() {
               </div>
 
               {/* Track Info */}
-              <div className="flex-1 z-10 p-8">
+              <div className="flex-1 z-10 p-6">
                 <motion.h3 
-                  className="text-2xl font-medium text-[var(--text-primary)] mb-3"
+                  className="text-2xl font-medium text-[var(--text-primary)]/90 mb-3"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  {track?.title || 'Not Playing'}
+                  {track?.title || 'Не воспроизводится'}
                 </motion.h3>
                 <motion.p 
-                  className="text-xl text-gray-400 mb-6"
+                  className="text-xl text-gray-400/90 mb-6"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  {track?.artist || 'No Artist'}
+                  {track?.artist || 'Нет исполнителя'}
                 </motion.p>
                 <div className="flex items-center gap-4 text-base text-gray-400">
                   <span>{formatTime(track?.progress || 0)}</span>
@@ -97,7 +98,7 @@ export function SpotifyPlayer() {
             </div>
 
             {/* Desktop Layout (Side by Side) */}
-            <div className="hidden md:flex items-center gap-8 p-10">
+            <div className="hidden md:flex items-center gap-8 p-8">
               {/* Album Cover with Glow */}
               <div className="relative">
                 {/* Glow Effect */}
@@ -106,12 +107,12 @@ export function SpotifyPlayer() {
                     className="absolute inset-0 blur-2xl transition-opacity duration-700"
                     style={{ 
                       background: track.dominant_color,
-                      opacity: track.is_playing ? 0.3 : 0.15,
+                      opacity: track.is_playing ? 0.15 : 0.1,
                       transform: 'scale(1.5)',
                     }}
                   />
                 )}
-                <div className="relative w-48 h-48 bg-[var(--block-border)] rounded-lg 
+                <div className="relative w-40 h-40 bg-[var(--block-border)] rounded-lg 
                   flex items-center justify-center overflow-hidden z-10">
                   {track?.cover ? (
                     <motion.img 
@@ -134,20 +135,20 @@ export function SpotifyPlayer() {
               {/* Track Info */}
               <div className="flex-1 z-10">
                 <motion.h3 
-                  className="text-3xl font-medium text-[var(--text-primary)] mb-3"
+                  className="text-2xl font-medium text-[var(--text-primary)]/90 mb-3"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  {track?.title || 'Not Playing'}
+                  {track?.title || 'Не воспроизводится'}
                 </motion.h3>
                 <motion.p 
-                  className="text-2xl text-gray-400 mb-6"
+                  className="text-xl text-gray-400/90 mb-6"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  {track?.artist || 'No Artist'}
+                  {track?.artist || 'Нет исполнителя'}
                 </motion.p>
                 <div className="flex items-center gap-4 text-base text-gray-400">
                   <span>{formatTime(track?.progress || 0)}</span>

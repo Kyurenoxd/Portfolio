@@ -42,7 +42,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               className="absolute top-4 right-4 text-gray-400 hover:text-white
                 transition-colors"
             >
-              Close
+              Закрыть
             </button>
 
             <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">
@@ -51,12 +51,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Overview</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Обзор</h3>
                 <p className="text-gray-300">{project.details.overview}</p>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Features</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Особенности</h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-1">
                   {project.details.features.map((feature, index) => (
                     <li key={index}>{feature}</li>
@@ -65,7 +65,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Challenges</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Сложности</h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-1">
                   {project.details.challenges.map((challenge, index) => (
                     <li key={index}>{challenge}</li>
@@ -74,7 +74,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Solutions</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[var(--accent)]">Решения</h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-1">
                   {project.details.solutions.map((solution, index) => (
                     <li key={index}>{solution}</li>

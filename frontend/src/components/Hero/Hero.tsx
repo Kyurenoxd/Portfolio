@@ -27,7 +27,7 @@ export function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-4 lg:mb-6 text-[var(--text-primary)]">
-                Hello! I&apos;m
+                Привет! я
               </h2>
             </motion.div>
 
